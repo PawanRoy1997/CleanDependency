@@ -1,20 +1,22 @@
+import com.example.cleandependency.Configuration
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.example.cleandependency"
-    compileSdk = 34
+    namespace = Configuration.namespace
+    compileSdk = Configuration.compileSdk
 
     defaultConfig {
-        applicationId = "com.example.cleandependency"
-        minSdk = 21
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Configuration.applicationId
+        minSdk = Configuration.minSdk
+        targetSdk = Configuration.targetSdk
+        versionCode = Configuration.versionCode
+        versionName = Configuration.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Configuration.testInstrumentationRunner
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -30,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = Configuration.sourceCompatibility
+        targetCompatibility = Configuration.sourceCompatibility
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Configuration.sourceTarget
     }
     buildFeatures {
         compose = true
@@ -51,7 +53,7 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.8.1")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
