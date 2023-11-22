@@ -2,9 +2,7 @@ import com.example.cleandependency.Configuration
 import com.example.cleandependency.Dependencies
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
+    id("application-plugin")
 }
 
 android {
